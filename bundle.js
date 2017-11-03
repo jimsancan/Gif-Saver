@@ -992,7 +992,7 @@ var App = function (_React$Component) {
 
   _createClass(App, [{
     key: 'render',
-    value: function render() {
+    value: function render(props) {
       return _react2.default.createElement(
         'div',
         null,
@@ -1005,7 +1005,8 @@ var App = function (_React$Component) {
           'button',
           null,
           'Click me'
-        )
+        ),
+        _react2.default.createElement('div', { className: 'photos' })
       );
     }
   }]);

@@ -3,3 +3,11 @@ class Photolist extends React.Component {
     super(props)
   }
 }
+
+render() {
+
+}
+
+var PhotoRender = (props) => {
+  
+}
