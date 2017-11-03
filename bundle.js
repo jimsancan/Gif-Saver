@@ -994,9 +994,14 @@ var App = function (_React$Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'h1',
+        'div',
         null,
-        'stuff is showing up'
+        _react2.default.createElement(
+          'h1',
+          null,
+          'stuff is showing up'
+        ),
+        _react2.default.createElement('img', { src: 'dog.jpeg' })
       );
     }
   }]);

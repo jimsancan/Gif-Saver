@@ -3,7 +3,10 @@ import ReactDom from 'react-dom';
 
 class App extends React.Component {
   render() {
-    return <h1>stuff is showing up</h1>
+    return <div>
+      <h1>stuff is showing up</h1>
+      <img src="dog.jpeg"/>
+    </div>
   }
 }
 
