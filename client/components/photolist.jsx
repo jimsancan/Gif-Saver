@@ -9,7 +9,9 @@ class Photolist extends React.Component {
 
   render() {
     return (
-      <div>PhotoList Div </div>
+      <div>
+      <Photo />
+      </div>
     );
   }
 }

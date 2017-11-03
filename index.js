@@ -13,23 +13,5 @@ app.get('/', (req, res) => {
 });
 
 
-// giphy.random({
-//     tag: 'superman',
-//     rating: 'g',
-//     fmt: 'json'
-// }, function(err, res) {
-//  if (err) return 'err';
-//  return (res);
-// });
-
-
-
-// axios.get('')
-// .then(function (response) {
-//   console.log(response);
-// })
-// .catch(function (error) {
-//   console.log(error);
-// });
 
 app.listen(3000, () => {console.log('app is listening on port 3000')})

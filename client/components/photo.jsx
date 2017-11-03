@@ -11,7 +11,7 @@ class Photo extends React.Component {
 
 render() {
   return (
-      <div>photo div here</div>
+      <div>One photo here</div>
     );
   }
 }
