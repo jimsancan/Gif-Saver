@@ -14,10 +14,5 @@ class Photolist extends React.Component {
   }
 }
 
-var PhotoRender = (props) => {
-  <div className="list">
-    
-  </div>
-}
 
 export default Photolist;

@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var axios = require('axios');
+const giphy = require('giphy-api-without-credentials')();
 var app = express();
 var router = express.Router();
 
@@ -12,13 +13,23 @@ app.get('/', (req, res) => {
 });
 
 
+// giphy.random({
+//     tag: 'superman',
+//     rating: 'g',
+//     fmt: 'json'
+// }, function(err, res) {
+//  if (err) return 'err';
+//  return (res);
+// });
 
-app.use('./db.js', router);
+//Giphy api key M5y7v64maGCzkUuyIkwmuv35tTAP2CCE
 
-//https://dog.ceo/dog-api
-
-app.get('/dogs', (req,res) => {
-
-})
+// axios.get('')
+// .then(function (response) {
+//   console.log(response);
+// })
+// .catch(function (error) {
+//   console.log(error);
+// });
 
 app.listen(3000, () => {console.log('app is listening on port 3000')})

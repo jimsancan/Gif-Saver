@@ -1,7 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 
 var dogSchema = new Schema ({
-
+  
 })
 
 
