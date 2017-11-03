@@ -984,10 +984,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
 
-  function App() {
+  function App(props) {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
   }
 
   _createClass(App, [{
@@ -999,9 +999,13 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'h1',
           null,
-          'stuff is showing up'
+          'Title Goes Here'
         ),
-        _react2.default.createElement('img', { src: 'dog.jpeg' })
+        _react2.default.createElement(
+          'button',
+          null,
+          'Click me'
+        )
       );
     }
   }]);
