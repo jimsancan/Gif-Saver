@@ -6,13 +6,11 @@ class Photo extends React.Component {
     super(props)
   }
 
-
 render() {
   return (
-      <div>another div</div>
+      <div>photo div here</div>
     );
   }
-
 }
 
 export default Photo;

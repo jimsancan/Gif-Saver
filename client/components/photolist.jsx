@@ -1,16 +1,23 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import Photo from './photo.jsx';
 
 class Photolist extends React.Component {
   constructor(props) {
     super(props)
   }
-}
 
-render() {
-
+  render() {
+    return (
+      <div>PhotoList Div </div>
+    );
+  }
 }
 
 var PhotoRender = (props) => {
-
+  <div className="list">
+    
+  </div>
 }
+
+export default Photolist;

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Photo from './photo.jsx'
+import Photolist from './photolist.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,8 +10,8 @@ class App extends React.Component {
     return <div>
       <h1>Title Goes Here</h1>
       <button>Click me</button>
-      <div>
-      <Photo photo={console.log('here')}/>
+      <div> 
+        <Photolist />
       </div>
     </div>
   }

@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 router.get('/', (req,res, next) => {
   requestAnimationFrame({
     uri: 'https://dog.ceo/dog-api',
-  }).pip(res);
+  }).pipe(res);
 });  //
 module.exports = router;
 
