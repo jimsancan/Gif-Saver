@@ -13,8 +13,9 @@ class App extends React.Component {
   render() {
     return <div>
       <h1>Title Goes Here</h1>
-      <button onClick={() => axios.get('api.giphy.com/v1/gifs/random' )
-      .then(function(response){ console.log(response)}).catch(function(error){console.error(error)}) }>Click me</button> 
+      <button onClick={ () => axios.get('api.giphy.com/v1/gifs/random' )
+      .then(function(response){ console.log(response)})
+      .catch(function(error){console.error(error)}) }>Click me</button> 
       <div> 
         <Photolist />
       </div>

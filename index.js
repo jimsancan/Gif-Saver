@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 //  return (res);
 // });
 
-//Giphy api key M5y7v64maGCzkUuyIkwmuv35tTAP2CCE
+
 
 // axios.get('')
 // .then(function (response) {
