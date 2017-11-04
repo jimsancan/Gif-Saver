@@ -10,7 +10,7 @@ class App extends React.Component {
     };
   }
   getPhotos() {axios.get('/gifs')
-    .then(function(response){console.log(response)})
+    .then(function(response){console.log(response.data.data.url)})
     .catch(function(error){console.error(error)}
   )};
 
@@ -18,7 +18,7 @@ class App extends React.Component {
     return <div>
       <h1>Title Goes Here</h1>
       <div> 
-        <button onClick={this.getPhotos()}>click </button>
+        <button onClick={this.getPhotos}>click</button>
       </div>
     </div>
   }

@@ -1705,7 +1705,7 @@ var App = function (_React$Component) {
     key: 'getPhotos',
     value: function getPhotos() {
       _axios2.default.get('/gifs').then(function (response) {
-        console.log(response);
+        console.log(response.data.data.url);
       }).catch(function (error) {
         console.error(error);
       });
@@ -1726,8 +1726,8 @@ var App = function (_React$Component) {
           null,
           _react2.default.createElement(
             'button',
-            { onClick: this.getPhotos() },
-            'click '
+            { onClick: this.getPhotos },
+            'click'
           )
         )
       );
