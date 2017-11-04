@@ -2,7 +2,6 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var axios = require('axios');
-const giphy = require('giphy-api-without-credentials')();
 var app = express();
 
 app.use(bodyParser.json())
