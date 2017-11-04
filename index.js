@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/gifs', function(req,res) {
-  axios.get('https://api.giphy.com/v1/gifs/random?api_key=M5y7v64maGCzkUuyIkwmuv35tTAP2CCE')
+  axios.get('https://api.giphy.com/v1/gifs/random?api_key=M5y7v64maGCzkUuyIkwmuv35tTAP2CCE&tag=&rating=G')
   .then(function(response){ res.send(response.data)})
   .catch(function(error){console.error(error)})
 });
