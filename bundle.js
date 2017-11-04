@@ -1675,10 +1675,6 @@ var _reactDom = __webpack_require__(10);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _photolist = __webpack_require__(39);
-
-var _photolist2 = _interopRequireDefault(_photolist);
-
 var _axios = __webpack_require__(41);
 
 var _axios2 = _interopRequireDefault(_axios);
@@ -1699,11 +1695,22 @@ var App = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-    _this.state = {};
+    _this.state = {
+      gifs: []
+    };
     return _this;
   }
 
   _createClass(App, [{
+    key: 'getPhotos',
+    value: function getPhotos() {
+      _axios2.default.get('/gifs').then(function (response) {
+        console.log(response);
+      }).catch(function (error) {
+        console.error(error);
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -1715,20 +1722,13 @@ var App = function (_React$Component) {
           'Title Goes Here'
         ),
         _react2.default.createElement(
-          'button',
-          { onClick: function onClick() {
-              return _axios2.default.get('api.giphy.com/v1/gifs/random').then(function (response) {
-                console.log(response);
-              }).catch(function (error) {
-                console.error(error);
-              });
-            } },
-          'Click me'
-        ),
-        _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(_photolist2.default, null)
+          _react2.default.createElement(
+            'button',
+            { onClick: this.getPhotos() },
+            'click '
+          )
         )
       );
     }
@@ -10274,121 +10274,8 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 39 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(10);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _photo = __webpack_require__(40);
-
-var _photo2 = _interopRequireDefault(_photo);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Photolist = function (_React$Component) {
-  _inherits(Photolist, _React$Component);
-
-  function Photolist(props) {
-    _classCallCheck(this, Photolist);
-
-    return _possibleConstructorReturn(this, (Photolist.__proto__ || Object.getPrototypeOf(Photolist)).call(this, props));
-  }
-
-  _createClass(Photolist, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(_photo2.default, null)
-      );
-    }
-  }]);
-
-  return Photolist;
-}(_react2.default.Component);
-
-exports.default = Photolist;
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(10);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Photo = function (_React$Component) {
-  _inherits(Photo, _React$Component);
-
-  function Photo(props) {
-    _classCallCheck(this, Photo);
-
-    var _this = _possibleConstructorReturn(this, (Photo.__proto__ || Object.getPrototypeOf(Photo)).call(this, props));
-
-    _this.state = {};
-    return _this;
-  }
-
-  _createClass(Photo, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        'One photo here'
-      );
-    }
-  }]);
-
-  return Photo;
-}(_react2.default.Component);
-
-exports.default = Photo;
-
-/***/ }),
+/* 39 */,
+/* 40 */,
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
