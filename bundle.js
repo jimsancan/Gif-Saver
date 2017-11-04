@@ -1696,30 +1696,36 @@ var App = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
     _this.state = {
-      gifs: ''
+      gifs: []
     };
+    _this.getPhotos = _this.getPhotos.bind(_this);
     return _this;
   }
 
   _createClass(App, [{
     key: 'getPhotos',
     value: function getPhotos() {
-      _axios2.default.get('/gifs').then(function (response) {
-        console.log(response.data.data.url);
-      }).catch(function (error) {
-        console.error(error);
+      var _this2 = this;
+
+      for (var i = 0; i < 5; i++) {
+        _axios2.default.get('/gifs').then(function (response) {
+          console.log(_this2);
+          _this2.state.gifs.push(response.data.data.image_url);
+        }) // <img src=response.data.data.image_url>
+        .catch(function (error) {
+          console.error(error);
+        });
+      }
+    }
+  }, {
+    key: 'renderPhotos',
+    value: function renderPhotos(array) {
+      array.map(function (photo) {
+        return _react2.default.createElement(Photo, { photo: photo });
       });
     }
   }, {
     key: 'render',
-
-    //   componentDidMount() {
-    //   axios
-    //     .get(`endpoint`)
-    //     .then(res => this.setState({ posts: res.data }))
-    //     .catch(err => console.log(err))
-    // }
-
     value: function render() {
       return _react2.default.createElement(
         'div',
@@ -1731,12 +1737,13 @@ var App = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          null,
+          { onLoad: this.getPhotos() },
           _react2.default.createElement(
             'button',
-            { onClick: this.getPhotos },
+            { onClick: console.log(this.state) },
             'click'
-          )
+          ),
+          _react2.default.createElement('img', { src: 'https://media2.giphy.com/media/v7yEA9fukw80w/giphy.gif' })
         )
       );
     }
