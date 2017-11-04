@@ -41,7 +41,7 @@ class App extends React.Component {
 
   render() {
     return <div>
-      <h1>Title Goes Here</h1>
+      <h1>Gifs</h1>
       <div > 
        <button onClick={() => {window.location.reload()}}> new gifs </button> 
       <button onClick={() => {this.setState(this.state.gifs = [])}}>clear gifs</button>

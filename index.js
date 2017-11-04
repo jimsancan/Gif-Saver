@@ -4,7 +4,6 @@ var bodyParser = require('body-parser');
 var axios = require('axios');
 const giphy = require('giphy-api-without-credentials')();
 var app = express();
-var router = express.Router();
 
 app.use(bodyParser.json())
 

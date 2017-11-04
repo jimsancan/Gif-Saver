@@ -1748,7 +1748,7 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'h1',
           null,
-          'Title Goes Here'
+          'Gifs'
         ),
         _react2.default.createElement(
           'div',
