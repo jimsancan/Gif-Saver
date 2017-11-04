@@ -1715,8 +1715,7 @@ var App = function (_React$Component) {
       for (var i = 0; i < 5; i++) {
         _axios2.default.get('/gifs').then(function (response) {
           _this2.state.gifs.push(response.data.data.image_url);
-        }) // <img src=response.data.data.image_url>
-        .catch(function (error) {
+        }).catch(function (error) {
           console.error(error);
         });
       }

@@ -16,7 +16,7 @@ class App extends React.Component {
     for(var i =0; i< 5; i++) {
       axios.get('/gifs')
       .then((response) => {
-        this.state.gifs.push(response.data.data.image_url)}) // <img src=response.data.data.image_url>
+        this.state.gifs.push(response.data.data.image_url)}) 
       .catch(function(error){console.error(error)}
       )
     }
@@ -32,8 +32,6 @@ class App extends React.Component {
   componentWillMount() {
     this.getPhotos()
   }
-
-  
 
   render() {
     return <div>
