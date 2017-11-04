@@ -1747,7 +1747,7 @@ var App = function (_React$Component) {
         null,
         _react2.default.createElement(
           'h1',
-          null,
+          { className: 'header' },
           'Gifs'
         ),
         _react2.default.createElement(
