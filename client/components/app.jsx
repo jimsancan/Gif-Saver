@@ -38,7 +38,6 @@ class App extends React.Component {
     this.getPhotos()
   }
 
-
   render() {
     return <div>
       <h1 className="header">Gifs</h1>
