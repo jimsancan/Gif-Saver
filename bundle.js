@@ -10359,7 +10359,7 @@ var Photo = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement('img', { src: this.props.photo })
+        _react2.default.createElement('img', { src: this.props.photo, className: 'gif' })
       );
     }
   }]);

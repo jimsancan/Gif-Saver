@@ -11,7 +11,7 @@ class Photo extends React.Component {
 render() {
   return (
     <div>
-    <img src={this.props.photo}/>
+    <img src={this.props.photo} className="gif"/>
     </div>
   )
 }
