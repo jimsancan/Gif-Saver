@@ -8,10 +8,14 @@ class Photo extends React.Component {
 
   }
 
-
 render() {
   return (
-    
+    <div>
+    <p>helloooo</p>
+    <img src={this.props.photo}> </img>
+    </div>
   )
 }
 }
+
+export default Photo;
