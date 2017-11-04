@@ -6,13 +6,19 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      gifs: []
+      gifs: ''
     };
   }
   getPhotos() {axios.get('/gifs')
     .then(function(response){console.log(response.data.data.url)})
     .catch(function(error){console.error(error)}
   )};
+//   componentDidMount() {
+//   axios
+//     .get(`endpoint`)
+//     .then(res => this.setState({ posts: res.data }))
+//     .catch(err => console.log(err))
+// }
 
   render() {
     return <div>

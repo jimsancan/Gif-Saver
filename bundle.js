@@ -1696,7 +1696,7 @@ var App = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
     _this.state = {
-      gifs: []
+      gifs: ''
     };
     return _this;
   }
@@ -1712,6 +1712,14 @@ var App = function (_React$Component) {
     }
   }, {
     key: 'render',
+
+    //   componentDidMount() {
+    //   axios
+    //     .get(`endpoint`)
+    //     .then(res => this.setState({ posts: res.data }))
+    //     .catch(err => console.log(err))
+    // }
+
     value: function render() {
       return _react2.default.createElement(
         'div',
