@@ -38,12 +38,15 @@ class App extends React.Component {
     this.getPhotos()
   }
 
+
   render() {
     return <div>
       <h1>Title Goes Here</h1>
       <div > 
+       <button onClick={() => {window.location.reload()}}> new gifs </button> 
       <button onClick={() => {this.setState(this.state.gifs = [])}}>clear gifs</button>
           {this.state.gifs.length ? this.state.gifs.map(gif =>  <Photo photo={gif}/>) : null }
+        
         
       </div>
     </div>

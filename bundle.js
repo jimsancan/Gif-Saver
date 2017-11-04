@@ -1756,6 +1756,13 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             'button',
             { onClick: function onClick() {
+                window.location.reload();
+              } },
+            ' new gifs '
+          ),
+          _react2.default.createElement(
+            'button',
+            { onClick: function onClick() {
                 _this3.setState(_this3.state.gifs = []);
               } },
             'clear gifs'
