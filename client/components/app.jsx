@@ -13,7 +13,7 @@ class App extends React.Component {
     this.renderPhotos = this.renderPhotos.bind(this);
   }
   getPhotos() {
-    for(var i =0; i< 6; i++) {
+    for(var i =0; i < 6; i++) {
       axios.get('/gifs')
       .then((response) => {
         // this.setState({})
