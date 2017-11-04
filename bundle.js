@@ -1712,7 +1712,7 @@ var App = function (_React$Component) {
     value: function getPhotos() {
       var _this2 = this;
 
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < 11; i++) {
         _axios2.default.get('/gifs').then(function (response) {
           // this.setState({})
           _this2.setState(function (previousState) {
