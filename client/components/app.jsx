@@ -16,7 +16,12 @@ class App extends React.Component {
     for(var i =0; i< 5; i++) {
       axios.get('/gifs')
       .then((response) => {
-        this.state.gifs.push(response.data.data.image_url)}) 
+        // this.setState({})
+        this.setState((previousState) => { 
+          previousState.gifs.push(response.data.data.image_url);
+          return previousState; 
+        }) 
+      }) 
       .catch(function(error){console.error(error)}
       )
     }
@@ -24,9 +29,9 @@ class App extends React.Component {
 
   renderPhotos(array) {
     console.log(array);
-    array.map((photo) => {
+    return array.map((photo) => {
       return <Photo photo={photo}/> 
-  })
+    })
   }
 
   componentWillMount() {
@@ -37,7 +42,8 @@ class App extends React.Component {
     return <div>
       <h1>Title Goes Here</h1>
       <div > 
-        <button onClick={() =>{ this.renderPhotos(this.state.gifs)}}>click</button>
+      <button onClick={() => {this.setState(this.state.gifs = [])}}>clear gifs</button>
+          {this.state.gifs.length ? this.state.gifs.map(gif =>  <Photo photo={gif}/>) : null }
         
       </div>
     </div>

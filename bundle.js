@@ -1714,7 +1714,11 @@ var App = function (_React$Component) {
 
       for (var i = 0; i < 5; i++) {
         _axios2.default.get('/gifs').then(function (response) {
-          _this2.state.gifs.push(response.data.data.image_url);
+          // this.setState({})
+          _this2.setState(function (previousState) {
+            previousState.gifs.push(response.data.data.image_url);
+            return previousState;
+          });
         }).catch(function (error) {
           console.error(error);
         });
@@ -1724,7 +1728,7 @@ var App = function (_React$Component) {
     key: 'renderPhotos',
     value: function renderPhotos(array) {
       console.log(array);
-      array.map(function (photo) {
+      return array.map(function (photo) {
         return _react2.default.createElement(_photo2.default, { photo: photo });
       });
     }
@@ -1752,10 +1756,13 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             'button',
             { onClick: function onClick() {
-                _this3.renderPhotos(_this3.state.gifs);
+                _this3.setState(_this3.state.gifs = []);
               } },
-            'click'
-          )
+            'clear gifs'
+          ),
+          this.state.gifs.length ? this.state.gifs.map(function (gif) {
+            return _react2.default.createElement(_photo2.default, { photo: gif });
+          }) : null
         )
       );
     }
@@ -10345,16 +10352,7 @@ var Photo = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(
-          'p',
-          null,
-          'helloooo'
-        ),
-        _react2.default.createElement(
-          'img',
-          { src: this.props.photo },
-          ' '
-        )
+        _react2.default.createElement('img', { src: this.props.photo })
       );
     }
   }]);
