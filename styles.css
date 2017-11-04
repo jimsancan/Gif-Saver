@@ -1,5 +1,19 @@
+
 .gif {
+  min-width: 350px;
+  max-width: 350px;
+  max-height: 350px;
+  min-height: 200px;
+  text-align: center;
+}
+
+.wrapper {
   min-width: 400px;
   max-width: 400px;
-  display: inline-block;
+  max-height: 350px;
+  min-height: 350px;
+  float: left;
 }
+
+
+

@@ -13,7 +13,7 @@ class App extends React.Component {
     this.renderPhotos = this.renderPhotos.bind(this);
   }
   getPhotos() {
-    for(var i =0; i< 11; i++) {
+    for(var i =0; i< 6; i++) {
       axios.get('/gifs')
       .then((response) => {
         // this.setState({})
@@ -42,12 +42,10 @@ class App extends React.Component {
   render() {
     return <div>
       <h1>Gifs</h1>
-      <div > 
+      <div className="button"> 
        <button onClick={() => {window.location.reload()}}> new gifs </button> 
       <button onClick={() => {this.setState(this.state.gifs = [])}}>clear gifs</button>
           {this.state.gifs.length ? this.state.gifs.map(gif =>  <Photo photo={gif}/>) : null }
-        
-        
       </div>
     </div>
   }

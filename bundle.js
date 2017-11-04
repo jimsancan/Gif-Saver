@@ -1712,7 +1712,7 @@ var App = function (_React$Component) {
     value: function getPhotos() {
       var _this2 = this;
 
-      for (var i = 0; i < 11; i++) {
+      for (var i = 0; i < 6; i++) {
         _axios2.default.get('/gifs').then(function (response) {
           // this.setState({})
           _this2.setState(function (previousState) {
@@ -1752,7 +1752,7 @@ var App = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          null,
+          { className: 'button' },
           _react2.default.createElement(
             'button',
             { onClick: function onClick() {
@@ -10358,7 +10358,7 @@ var Photo = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'wrapper' },
         _react2.default.createElement('img', { src: this.props.photo, className: 'gif' })
       );
     }
