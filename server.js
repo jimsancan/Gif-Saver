@@ -9,6 +9,7 @@ var keys = require('./keys.js');
 app.use(bodyParser.json())
 
 app.use(express.static(path.resolve(__dirname)))
+  
 
 app.get('/', (req, res) => {
   res.render('index.html')
