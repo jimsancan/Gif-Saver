@@ -12,4 +12,4 @@ npm run webpack
 
 for server 
   run webpack -w
-  run nodemon index.js
+  run nodemon server.js

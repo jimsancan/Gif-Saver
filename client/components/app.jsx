@@ -10,7 +10,6 @@ class App extends React.Component {
       gifs: []
     };
     this.getPhotos=this.getPhotos.bind(this)
-    this.renderPhotos = this.renderPhotos.bind(this);
   }
   getPhotos() {
     for(var i =0; i < 6; i++) {
@@ -26,13 +25,6 @@ class App extends React.Component {
       )
     }
   };
-
-  renderPhotos(array) {
-    console.log(array);
-    return array.map((photo) => {
-      return <Photo photo={photo}/> 
-    })
-  }
 
   componentWillMount() {
     this.getPhotos()

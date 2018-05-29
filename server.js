@@ -3,6 +3,8 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var axios = require('axios');
 var app = express();
+var db = require('./db.js');
+var keys = require('./keys.js');
 
 app.use(bodyParser.json())
 
@@ -13,9 +15,16 @@ app.get('/', (req, res) => {
 });
 
 app.get('/gifs', function(req,res) {
-  axios.get('https://api.giphy.com/v1/gifs/random?api_key=M5y7v64maGCzkUuyIkwmuv35tTAP2CCE&tag=&rating=G')
+  axios.get(keys.key)
   .then(function(response){ res.send(response.data)})
   .catch(function(error){console.error(error)})
 });
 
-app.listen(3000, () => {console.log('app is listening on port 3000')})
+app.post('/dbreq', function(req,res){
+  console.log(req.body);
+  db.savePhoto(req.body.url);
+  res.send(); //good practice to end 
+})
+
+
+app.listen(3050, () => {console.log('app is listening on port 3050')})
