@@ -28,4 +28,4 @@ app.post('/dbreq', function(req,res){
 })
 
 
-app.listen(3050, () => {console.log('app is listening on port 3050')})
+app.listen(process.env.PORT || 3050, () => {console.log('app is listening on port 3050')})

@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "webpack": "webpack",
-    "start": "server.js"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
